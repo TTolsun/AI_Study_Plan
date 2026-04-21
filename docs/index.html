@@ -1,1 +1,489 @@
-.,
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera HAL AI Study</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel-2: #182241;
+      --text: #ecf1ff;
+      --muted: #aeb9d8;
+      --line: #2a3764;
+      --accent: #7cc6ff;
+      --accent-2: #8dffcf;
+      --chip: #22315e;
+      --shadow: 0 14px 40px rgba(0,0,0,0.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(124,198,255,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(141,255,207,0.08), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .hero {
+      padding: 34px 30px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(124,198,255,0.16), rgba(141,255,207,0.08));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(124,198,255,0.14);
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.18;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .meta-card {
+      background: rgba(18, 26, 49, 0.78);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(124,198,255,0.28), rgba(141,255,207,0.18));
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--panel-2);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: #d9e8ff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .page-link {
+      display: block;
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: #0f1730;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .page-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(124,198,255,0.5);
+    }
+
+    .page-link strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .page-link span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .resource {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: #0f1730;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .resource strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .resource span {
+      color: var(--muted);
+      font-size: 14px;
+      word-break: break-all;
+    }
+
+    .highlight-box {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(124,198,255,0.10);
+      border: 1px solid rgba(124,198,255,0.22);
+      color: #d9ebff;
+    }
+
+    .footer {
+      margin-top: 26px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .meta-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .section {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="eyebrow">CAMERA HAL AI STUDY 2026</div>
+      <h1>Camera HAL Part AI Study</h1>
+      <p class="subtitle">
+        Camera HAL Part에서 올해 동안 AI 스터디를 운영합니다.
+        목표는 단순한 이론 학습이 아니라, 현업에 바로 적용 가능한 Claude Code 사용법을 익히고,
+        실제 업무 개선으로 이어지는 AI Item을 발굴·검증한 뒤,
+        이후에는 보다 체계적인 AI 역량 강화로 확장하는 것입니다.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">운영 기간</div>
+          <div class="meta-value">2026년 연간</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">시작일</div>
+          <div class="meta-value">04.27</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">운영 주기</div>
+          <div class="meta-value">2주 1회</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">회당 시간</div>
+          <div class="meta-value">90분</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">참여 규모</div>
+          <div class="meta-value">약 10명</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="plan.html">Study Plan 보기</a>
+        <a class="btn btn-secondary" href="items.html">AI Item 보기</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>스터디 방향</h2>
+      <p>
+        이번 스터디는 “AI를 써보자” 수준에서 끝내지 않고,
+        Camera HAL 업무 안에서 실제로 어디에 적용할 수 있는지까지 다루는 것을 목표로 합니다.
+        특히 이번 운영에서는 여러 제품을 비교하지 않고, Claude Code를 중심으로 사용 경험과 실전 적용 방식을 정리합니다.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. 실무 적용 중심</h3>
+          <p>
+            로그 분석, 코드 수정, 테스트 보조, 문서화, 리뷰 준비처럼
+            바로 효과를 확인할 수 있는 업무부터 시작합니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3>2. Item 발굴 및 검증</h3>
+          <p>
+            반복되거나 누락되기 쉬운 작업을 중심으로
+            실제 팀에 남길 수 있는 AI Item을 선정하고 구체화합니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3>3. 연간 운영</h3>
+          <p>
+            상반기에는 현업 적용에 집중하고,
+            하반기에는 정리된 경험을 바탕으로 심화 학습으로 확장합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        핵심은 “많이 써보기”보다 “어디에, 어떻게, 검증 가능하게 적용할지”를 팀 기준으로 정리하는 것입니다.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>주요 페이지</h2>
+      <p>
+        상세 운영 계획과 AI Item 후보는 별도 페이지로 분리했습니다.
+        첫 화면에서는 전체 방향만 빠르게 확인하고, 세부 내용은 각 페이지에서 확인할 수 있습니다.
+      </p>
+
+      <div class="grid-2">
+        <a class="page-link" href="plan.html">
+          <strong>plan.html</strong>
+          <span>
+            연간 운영 계획, 회차 구성, 진행 방식, 단계별 목표를 정리한 페이지
+          </span>
+        </a>
+
+        <a class="page-link" href="items.html">
+          <strong>items.html</strong>
+          <span>
+            현업 적용 후보 AI Item, 우선순위, 기대 효과, 검토 방향을 정리한 페이지
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>이번 스터디에서 다룰 핵심 주제</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Claude Code 실전 사용법</h3>
+          <p>
+            Camera HAL 코드베이스를 대상으로 Claude Code를 어떻게 활용할지,
+            실무 기준의 입력 방식과 검증 방식을 중심으로 학습합니다.
+          </p>
+          <div class="chips">
+            <span class="chip">코드베이스 이해</span>
+            <span class="chip">수정 요청</span>
+            <span class="chip">테스트 보조</span>
+            <span class="chip">문서화</span>
+            <span class="chip">리뷰 준비</span>
+            <span class="chip">검증 루프</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>현업 적용 AI Item</h3>
+          <p>
+            팀의 반복 업무와 병목 구간을 기준으로,
+            실제 개선 효과가 있는 Item을 선정하고 실습과 검토를 진행합니다.
+          </p>
+          <div class="chips">
+            <span class="chip">로그 분석</span>
+            <span class="chip">패치 리뷰 보조</span>
+            <span class="chip">TC 보조</span>
+            <span class="chip">문서 자동화</span>
+            <span class="chip">형상관리 지원</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>추천 학습 자료</h2>
+      <p>
+        초반 스터디는 범용 AI 이론보다 Claude Code를 바로 써먹을 수 있는 자료 위주로 진행합니다.
+        아래 링크들은 입문 → 실전 → 확장 순서로 보기 좋게 골라둔 자료입니다.
+      </p>
+
+      <div class="resource-list">
+        <a class="resource" href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" rel="noopener noreferrer">
+          <strong>1. Claude Code Overview</strong>
+          <span>https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/ide-integrations" target="_blank" rel="noopener noreferrer">
+          <strong>2. Use Claude Code in VS Code</strong>
+          <span>https://docs.anthropic.com/en/docs/claude-code/ide-integrations</span>
+        </a>
+
+        <a class="resource" href="https://www.anthropic.com/engineering/claude-code-best-practices" target="_blank" rel="noopener noreferrer">
+          <strong>3. Best Practices for Claude Code</strong>
+          <span>https://www.anthropic.com/engineering/claude-code-best-practices</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/ko/docs/claude-code/settings" target="_blank" rel="noopener noreferrer">
+          <strong>4. Claude Code 설정</strong>
+          <span>https://docs.anthropic.com/ko/docs/claude-code/settings</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/slash-commands" target="_blank" rel="noopener noreferrer">
+          <strong>5. Extend Claude with Skills</strong>
+          <span>https://docs.anthropic.com/en/docs/claude-code/slash-commands</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/prompt-library/library" target="_blank" rel="noopener noreferrer">
+          <strong>6. Prompting Best Practices</strong>
+          <span>https://docs.anthropic.com/en/prompt-library/library</span>
+        </a>
+
+        <a class="resource" href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">
+          <strong>7. MCP Introduction</strong>
+          <span>https://modelcontextprotocol.io/docs/getting-started/intro</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>운영 요약</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>초반</h3>
+          <p>
+            Claude Code 사용법과 검증 방식 정리
+          </p>
+        </div>
+        <div class="card">
+          <h3>중반</h3>
+          <p>
+            AI Item 선정, 실습, PoC 및 활용 방식 정리
+          </p>
+        </div>
+        <div class="card">
+          <h3>후반</h3>
+          <p>
+            정리된 경험을 바탕으로 심화 학습 및 확장 주제 검토
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Camera HAL Part AI Study · 2026
+    </footer>
+  </div>
+</body>
+</html>
