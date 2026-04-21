@@ -157,7 +157,7 @@
 
     .meta-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
       margin-top: 28px;
     }
@@ -200,24 +200,39 @@
       font-size: 14px;
       font-weight: 900;
       border: 2px solid transparent;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition);
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--red), #ff8a5b);
-      color: #ffffff;
-      box-shadow: 0 14px 28px rgba(255, 87, 87, 0.22);
-    }
-
+    .btn-primary,
     .btn-secondary {
       background: #ffffff;
       color: var(--blue);
       border-color: rgba(47, 103, 255, 0.12);
       box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, var(--red), #ff8a5b);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(255, 87, 87, 0.22);
+      transform: translateY(-2px);
+    }
+
+    .btn:focus-visible,
+    .page-link:focus-visible {
+      outline: 3px solid rgba(47, 103, 255, 0.28);
+      outline-offset: 3px;
     }
 
     .section {
@@ -300,13 +315,23 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,248,238,0.92));
       border: 2px solid rgba(24, 35, 56, 0.06);
       box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        color var(--transition);
     }
 
     .page-link:hover {
       transform: translateY(-4px);
-      border-color: rgba(47, 103, 255, 0.16);
-      box-shadow: 0 18px 30px rgba(24, 35, 56, 0.12);
+      border-color: rgba(255, 87, 87, 0.16);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,241,234,0.94));
+      box-shadow: 0 18px 30px rgba(255, 87, 87, 0.12);
+    }
+
+    .page-link:hover strong {
+      color: #e04444;
     }
 
     .page-link strong {
@@ -315,6 +340,18 @@
       font-size: 18px;
       line-height: 1.4;
       letter-spacing: -0.02em;
+    }
+
+    .page-link .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(47, 103, 255, 0.08);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
     }
 
     .page-link span {
@@ -403,9 +440,9 @@
       </h1>
 
       <p class="subtitle">
-        Claude Code를 중심으로, Camera HAL 업무에 바로 적용 가능한 AI 활용법과
-        실제 개선 효과가 있는 AI Item을 함께 정리하고,
-        이후에는 AI Expert 시험 대비까지 연결하는 연간 스터디입니다.
+        AI Agent를 활용해 Camera HAL 업무에 적용 가능한 방법과 실제 개선 효과가 있는 AI Item을 정리,
+		각자 관심 있는 아이템을 선택해 자유롭게 진행한 뒤,
+		이후에는 AI Expert 시험 대비로 확장합니다.
       </p>
 
       <div class="meta-grid">
@@ -425,10 +462,6 @@
           <div class="meta-label">회당 시간</div>
           <div class="meta-value">90분</div>
         </div>
-        <div class="meta-card">
-          <div class="meta-label">참여 규모</div>
-          <div class="meta-value">약 10명</div>
-        </div>
       </div>
 
       <div class="hero-actions">
@@ -439,62 +472,64 @@
     </header>
 
     <section class="section">
-      <h2>What We Focus On</h2>
+      <h2>스터디 핵심 방향</h2>
 
       <div class="grid-3">
         <div class="card">
-          <h3>Claude Code 실전 활용</h3>
+          <h3>AI Agent 실전 활용</h3>
           <p>
             코드 이해, 수정 요청, 테스트 보조, 문서화처럼
-            바로 업무에 넣을 수 있는 사용법부터 정리합니다.
+            바로 업무에 넣을 수 있는 사용법부터 정리
           </p>
         </div>
 
         <div class="card">
-          <h3>현업 적용 AI Item 발굴</h3>
+          <h3>현업 적용 AI Item 발굴 및 적용</h3>
           <p>
             반복되거나 누락되기 쉬운 업무를 중심으로
-            실제 팀에 남길 수 있는 아이템을 검토합니다.
+            실제 팀에 남길 수 있는 아이템을 검토하고 적용
           </p>
         </div>
 
         <div class="card">
           <h3>AI Expert 시험 대비</h3>
           <p>
-            현업 적용 경험을 바탕으로 Python, CV/딥러닝 기초,
-            AI 개념 학습까지 연결해 후반부 시험 대비반으로 확장합니다.
+            후반부는 Python, CV/딥러닝 기초, AI 개념 학습까지 시험 대비반으로 확장
           </p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Explore</h2>
+      <h2>바로가기</h2>
       <p>
-        자세한 운영 계획과 아이템 후보, 시험 대비 자료는 아래 페이지에서 확인할 수 있습니다.
+        자세한 학습 계획과 아이템 후보, 시험 대비 자료는 아래 페이지에서 확인할 수 있습니다.
       </p>
 
       <div class="grid-3">
         <a class="page-link" href="plan.html">
-          <strong>plan.html</strong>
-          <span>운영 방식, 연간 흐름, 회차 구성, 학습 자료를 정리한 페이지</span>
+          <div class="label">Study Plan</div>
+          <strong>학습 계획</strong>
+          <span>학습 방식, 회차 구성, 학습 자료 정리</span>
         </a>
 
         <a class="page-link" href="items.html">
-          <strong>items.html</strong>
-          <span>현업 적용 후보 AI Item, 우선 검토 대상, 기대 효과를 정리한 페이지</span>
+          <div class="label">AI Items</div>
+          <strong>현업 적용 아이템</strong>
+          <span>현업 적용 후보 AI Item, 기대 효과 정리</span>
         </a>
 
         <a class="page-link" href="expert.html">
-          <strong>expert.html</strong>
+          <div class="label">AI Expert</div>
+          <strong>AI Expert 시험 대비</strong>
           <span>AI Expert 시험 대비 방향과 Python, CS231n, Stanford CME295 학습 자료를 정리한 페이지</span>
         </a>
       </div>
     </section>
 
     <footer class="footer">
-      Camera HAL Part AI Study · 2026
-    </footer>
+	  Camera HAL Part AI Study · 2026 · Designed & Built by KH
+	</footer>
   </div>
 </body>
 </html>
