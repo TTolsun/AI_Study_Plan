@@ -32,7 +32,7 @@
       --radius-md: 18px;
       --radius-sm: 14px;
 
-      --max-width: 1240px;
+      --max-width: 1180px;
       --transition: 180ms ease;
     }
 
@@ -64,7 +64,7 @@
     .wrap {
       width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
-      padding: 34px 0 72px;
+      padding: 34px 0 68px;
     }
 
     .hero {
@@ -148,18 +148,18 @@
     }
 
     .subtitle {
-      margin: 22px 0 0;
-      max-width: 920px;
+      margin: 20px 0 0;
+      max-width: 860px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.88;
+      line-height: 1.86;
     }
 
     .meta-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .meta-card {
@@ -177,7 +177,7 @@
     }
 
     .meta-value {
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 900;
       line-height: 1.25;
       letter-spacing: -0.03em;
@@ -187,7 +187,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -221,25 +221,16 @@
     }
 
     .section {
-      margin-top: 30px;
-      padding: 34px 30px;
+      margin-top: 26px;
+      padding: 30px 28px;
       border-radius: var(--radius-lg);
       background: rgba(255,255,255,0.88);
       border: 2px solid rgba(24, 35, 56, 0.06);
       box-shadow: var(--shadow-md);
     }
 
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-
     .section h2 {
-      margin: 0;
+      margin: 0 0 10px;
       font-size: 28px;
       line-height: 1.22;
       letter-spacing: -0.025em;
@@ -255,7 +246,7 @@
     .grid-3 {
       display: grid;
       gap: 18px;
-      margin-top: 22px;
+      margin-top: 20px;
     }
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -302,22 +293,9 @@
       line-height: 1.82;
     }
 
-    .highlight-box {
-      margin-top: 22px;
-      padding: 20px 22px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(255,216,77,0.22), rgba(94,211,255,0.16));
-      border: 2px solid rgba(24, 35, 56, 0.06);
-      color: #20314f;
-      font-size: 15px;
-      line-height: 1.82;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .page-link,
-    .resource {
+    .page-link {
       display: block;
-      padding: 20px 20px;
+      padding: 22px 20px;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,248,238,0.92));
       border: 2px solid rgba(24, 35, 56, 0.06);
@@ -325,83 +303,29 @@
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
 
-    .page-link:hover,
-    .resource:hover {
+    .page-link:hover {
       transform: translateY(-4px);
       border-color: rgba(47, 103, 255, 0.16);
       box-shadow: 0 18px 30px rgba(24, 35, 56, 0.12);
     }
 
-    .page-link strong,
-    .resource strong {
+    .page-link strong {
       display: block;
       margin-bottom: 8px;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.4;
       letter-spacing: -0.02em;
     }
 
-    .page-link span,
-    .resource span {
+    .page-link span {
       display: block;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.72;
-      word-break: break-all;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      line-height: 1;
-      border: 2px solid transparent;
-      box-shadow: 0 4px 10px rgba(24, 35, 56, 0.06);
-    }
-
-    .chip.blue {
-      background: rgba(47, 103, 255, 0.10);
-      color: var(--blue);
-      border-color: rgba(47, 103, 255, 0.10);
-    }
-
-    .chip.red {
-      background: rgba(255, 87, 87, 0.10);
-      color: #e34242;
-      border-color: rgba(255, 87, 87, 0.10);
-    }
-
-    .chip.yellow {
-      background: rgba(255, 216, 77, 0.22);
-      color: #7a5a00;
-      border-color: rgba(255, 216, 77, 0.18);
-    }
-
-    .chip.mint {
-      background: rgba(55, 214, 181, 0.12);
-      color: #13896d;
-      border-color: rgba(55, 214, 181, 0.12);
-    }
-
-    .chip.purple {
-      background: rgba(157, 124, 255, 0.12);
-      color: #6c4be0;
-      border-color: rgba(157, 124, 255, 0.12);
     }
 
     .footer {
-      margin-top: 30px;
+      margin-top: 26px;
       padding-top: 8px;
       text-align: center;
       color: var(--muted);
@@ -453,7 +377,6 @@
 
       .card,
       .page-link,
-      .resource,
       .meta-card {
         padding: 18px 16px;
       }
@@ -480,10 +403,8 @@
       </h1>
 
       <p class="subtitle">
-        Camera HAL Part에서 올해 동안 AI 스터디를 운영합니다.
-        목표는 단순한 이론 학습이 아니라, 현업에 바로 적용 가능한 Claude Code 사용법을 익히고,
-        실제 업무 개선으로 이어지는 AI Item을 발굴·검증한 뒤,
-        이후에는 보다 체계적인 AI 역량 강화로 확장하는 것입니다.
+        Claude Code를 중심으로, Camera HAL 업무에 바로 적용 가능한 AI 활용법과
+        실제 개선 효과가 있는 AI Item을 함께 정리하는 연간 스터디입니다.
       </p>
 
       <div class="meta-grid">
@@ -516,169 +437,51 @@
     </header>
 
     <section class="section">
-      <div class="section-header">
-        <h2>스터디 방향</h2>
-      </div>
-      <p>
-        이번 스터디는 “AI를 써보자” 수준에서 끝내지 않고,
-        Camera HAL 업무 안에서 실제로 어디에 적용할 수 있는지까지 다루는 것을 목표로 합니다.
-        특히 이번 운영에서는 여러 제품을 비교하지 않고, Claude Code를 중심으로 사용 경험과 실전 적용 방식을 정리합니다.
-      </p>
+      <h2>What We Focus On</h2>
 
       <div class="grid-3">
         <div class="card">
-          <h3>1. 실무 적용 중심</h3>
+          <h3>Claude Code 실전 활용</h3>
           <p>
-            로그 분석, 코드 수정, 테스트 보조, 문서화, 리뷰 준비처럼
-            바로 효과를 확인할 수 있는 업무부터 시작합니다.
+            코드 이해, 수정 요청, 테스트 보조, 문서화처럼
+            바로 업무에 넣을 수 있는 사용법부터 정리합니다.
           </p>
         </div>
-        <div class="card">
-          <h3>2. Item 발굴 및 검증</h3>
-          <p>
-            반복되거나 누락되기 쉬운 작업을 중심으로
-            실제 팀에 남길 수 있는 AI Item을 선정하고 구체화합니다.
-          </p>
-        </div>
-        <div class="card">
-          <h3>3. 연간 운영</h3>
-          <p>
-            상반기에는 현업 적용에 집중하고,
-            하반기에는 정리된 경험을 바탕으로 심화 학습으로 확장합니다.
-          </p>
-        </div>
-      </div>
 
-      <div class="highlight-box">
-        핵심은 “많이 써보기”보다 “어디에, 어떻게, 검증 가능하게 적용할지”를 팀 기준으로 정리하는 것입니다.
+        <div class="card">
+          <h3>현업 적용 AI Item 발굴</h3>
+          <p>
+            반복되거나 누락되기 쉬운 업무를 중심으로
+            실제 팀에 남길 수 있는 아이템을 검토합니다.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>팀 자산화</h3>
+          <p>
+            개인 노하우로 끝내지 않고,
+            템플릿과 운영 방식까지 정리해 재사용 가능한 형태로 남깁니다.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-header">
-        <h2>주요 페이지</h2>
-      </div>
+      <h2>Explore</h2>
       <p>
-        상세 운영 계획과 AI Item 후보는 별도 페이지로 분리했습니다.
-        첫 화면에서는 전체 방향만 빠르게 확인하고, 세부 내용은 각 페이지에서 확인할 수 있습니다.
+        자세한 운영 계획과 아이템 후보는 아래 페이지에서 확인할 수 있습니다.
       </p>
 
       <div class="grid-2">
         <a class="page-link" href="plan.html">
           <strong>plan.html</strong>
-          <span>연간 운영 계획, 회차 구성, 진행 방식, 단계별 목표를 정리한 페이지</span>
+          <span>운영 방식, 연간 흐름, 회차 구성, 학습 자료를 정리한 페이지</span>
         </a>
 
         <a class="page-link" href="items.html">
           <strong>items.html</strong>
-          <span>현업 적용 후보 AI Item, 우선순위, 기대 효과, 검토 방향을 정리한 페이지</span>
+          <span>현업 적용 후보 AI Item, 우선 검토 대상, 기대 효과를 정리한 페이지</span>
         </a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>이번 스터디에서 다룰 핵심 주제</h2>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Claude Code 실전 사용법</h3>
-          <p>
-            Camera HAL 코드베이스를 대상으로 Claude Code를 어떻게 활용할지,
-            실무 기준의 입력 방식과 검증 방식을 중심으로 학습합니다.
-          </p>
-          <div class="chips">
-            <span class="chip blue">코드베이스 이해</span>
-            <span class="chip red">수정 요청</span>
-            <span class="chip yellow">테스트 보조</span>
-            <span class="chip mint">문서화</span>
-            <span class="chip blue">리뷰 준비</span>
-            <span class="chip purple">검증 루프</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>현업 적용 AI Item</h3>
-          <p>
-            팀의 반복 업무와 병목 구간을 기준으로,
-            실제 개선 효과가 있는 Item을 선정하고 실습과 검토를 진행합니다.
-          </p>
-          <div class="chips">
-            <span class="chip blue">로그 분석</span>
-            <span class="chip red">패치 리뷰 보조</span>
-            <span class="chip yellow">TC 보조</span>
-            <span class="chip mint">문서 자동화</span>
-            <span class="chip purple">형상관리 지원</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>추천 학습 자료</h2>
-      </div>
-      <p>
-        초반 스터디는 범용 AI 이론보다 Claude Code를 바로 써먹을 수 있는 자료 위주로 진행합니다.
-        아래 링크들은 입문 → 실전 → 확장 순서로 정리한 자료입니다.
-      </p>
-
-      <div class="grid-2">
-        <a class="resource" href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" rel="noopener noreferrer">
-          <strong>1. Claude Code Overview</strong>
-          <span>https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview</span>
-        </a>
-
-        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/ide-integrations" target="_blank" rel="noopener noreferrer">
-          <strong>2. Use Claude Code in VS Code</strong>
-          <span>https://docs.anthropic.com/en/docs/claude-code/ide-integrations</span>
-        </a>
-
-        <a class="resource" href="https://www.anthropic.com/engineering/claude-code-best-practices" target="_blank" rel="noopener noreferrer">
-          <strong>3. Best Practices for Claude Code</strong>
-          <span>https://www.anthropic.com/engineering/claude-code-best-practices</span>
-        </a>
-
-        <a class="resource" href="https://docs.anthropic.com/ko/docs/claude-code/settings" target="_blank" rel="noopener noreferrer">
-          <strong>4. Claude Code 설정</strong>
-          <span>https://docs.anthropic.com/ko/docs/claude-code/settings</span>
-        </a>
-
-        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/slash-commands" target="_blank" rel="noopener noreferrer">
-          <strong>5. Extend Claude with Skills</strong>
-          <span>https://docs.anthropic.com/en/docs/claude-code/slash-commands</span>
-        </a>
-
-        <a class="resource" href="https://docs.anthropic.com/en/prompt-library/library" target="_blank" rel="noopener noreferrer">
-          <strong>6. Prompting Best Practices</strong>
-          <span>https://docs.anthropic.com/en/prompt-library/library</span>
-        </a>
-
-        <a class="resource" href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">
-          <strong>7. MCP Introduction</strong>
-          <span>https://modelcontextprotocol.io/docs/getting-started/intro</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>운영 요약</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <h3>초반</h3>
-          <p>Claude Code 사용법과 검증 방식 정리</p>
-        </div>
-        <div class="card">
-          <h3>중반</h3>
-          <p>AI Item 선정, 실습, PoC 및 활용 방식 정리</p>
-        </div>
-        <div class="card">
-          <h3>후반</h3>
-          <p>정리된 경험을 바탕으로 심화 학습 및 확장 주제 검토</p>
-        </div>
       </div>
     </section>
 
