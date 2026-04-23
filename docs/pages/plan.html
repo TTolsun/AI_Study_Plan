@@ -190,7 +190,7 @@
 
     .subtitle {
       margin: 20px 0 0;
-      max-width: 920px;
+      max-width: 940px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.86;
@@ -495,9 +495,7 @@
   <div class="wrap">
     <nav class="topnav">
       <a href="index.html">Home</a>
-      <a class="active" href="plan.html">Plan</a>
-      <a href="items.html">Items</a>
-      <a href="expert.html">AI Expert</a>
+      <a class="active" href="plan/index.html">Plan</a>
     </nav>
 
     <header class="hero">
@@ -508,8 +506,12 @@
       </h1>
 
       <p class="subtitle">
-        공식 Claude Code 문서에서 잡아야 할 핵심 기능과, 가이드북에서 강조한 작업 경로·파일 구조·권한·검증·하네스 개념을 하나의 실무형 학습 계획으로 묶었습니다.
-        초반에는 작고 되돌리기 쉬운 과제로 시작하고, 중반에는 반복 가능한 운영 구조를 만들고, 후반에는 각자 선택한 AI Item 실습까지 연결합니다.
+        이번 스터디는 AI Agent의 기본 사용법을 익히는 교육과, 실제 Camera HAL 업무에 적용할 수 있는 실전 아이템을 함께 운영하는 방식으로 진행합니다.
+        초반 2회는 공통적으로 AI Agent를 안전하고 효율적으로 사용하는 방법을 익히는 데 집중하고,
+        이후에는 AI Agent 교육과 현업 적용 아이템을 병행합니다.
+        현업 아이템 진행 중 공유할 이슈나 어려운 내용이 생기면 이를 다음 회차 교육 주제로 연결하고,
+        별도 공유할 내용이 없는 경우에는 AI Agent 활용 역량을 높이는 교육 중심으로 운영합니다.
+        12월부터는 AI Expert 시험 대비를 중심으로 후반부 학습을 진행합니다.
       </p>
 
       <div class="meta-grid">
@@ -526,67 +528,69 @@
           <div class="meta-value">90분</div>
         </div>
         <div class="meta-card">
-          <div class="meta-label">학습 방식</div>
-          <div class="meta-value">개념 + 데모 + 실습</div>
+          <div class="meta-label">운영 방식</div>
+          <div class="meta-value">교육 + 실전 병행</div>
         </div>
       </div>
 
       <div class="hero-actions">
-        <a class="quick-link" href="#principles">학습 원칙</a>
+        <a class="quick-link" href="#principles">운영 원칙</a>
         <a class="quick-link" href="#modules">학습 모듈</a>
-        <a class="quick-link" href="#roadmap">연간 로드맵</a>
+        <a class="quick-link" href="#roadmap">운영 로드맵</a>
         <a class="quick-link" href="#resources">학습 자료</a>
       </div>
     </header>
 
     <section class="section" id="principles">
-      <h2>학습 원칙</h2>
+      <h2>운영 원칙</h2>
       <p>
-        이번 계획은 “기능을 많이 아는 것”보다 “어떤 작업을 어떤 경로에서 시작하고, 어떤 가드레일 아래에서 검증할지”를 익히는 데 초점을 둡니다.
+        이번 스터디는 단순히 기능을 배우는 교육이 아니라, 실제 업무에 적용하면서 필요한 내용을 함께 쌓아가는 방식으로 운영합니다.
       </p>
 
       <div class="grid-3">
         <div class="card">
           <div class="label">원칙 1</div>
-          <h3>작고 되돌리기 쉬운 과제부터</h3>
+          <h3>초반에는 공통 기반부터 익히기</h3>
           <p>
-            처음에는 회의록 정리, 짧은 브리프, 작은 버그 수정처럼 원본이 분명하고 사람이 다시 확인할 수 있는 과제로 시작합니다.
+            초반 2회는 AI Agent 기본 사용법, 작업 경로, 검증 습관, 안전한 활용 방식을 공통으로 익히는 데 집중합니다.
           </p>
         </div>
 
         <div class="card">
           <div class="label">원칙 2</div>
-          <h3>프롬프트보다 파일과 구조</h3>
+          <h3>교육과 실전 아이템 병행</h3>
           <p>
-            ABOUT-ME, TEMPLATE, OUTPUT, CLAUDE.md, plan, handoff처럼 읽을 것과 남길 것을 구조로 분리하는 습관을 먼저 익힙니다.
+            이후에는 현업 아이템을 진행하면서 필요한 내용을 함께 학습합니다. 실전 적용 과정에서 나온 질문과 이슈를 교육 주제로 연결합니다.
           </p>
         </div>
 
         <div class="card">
           <div class="label">원칙 3</div>
-          <h3>속도보다 권한·검증·하네스</h3>
+          <h3>공유 기반의 유연한 운영</h3>
           <p>
-            permissions, hooks, review, verify 기준을 먼저 잡고, 그 뒤에 자동화와 반복 운영으로 넓혀 갑니다.
+            회차마다 아이템 진행 상황과 어려운 점을 공유하고, 공유할 내용이 없는 경우에는 AI Agent 교육 중심으로 운영합니다.
           </p>
         </div>
       </div>
 
       <div class="highlight-box">
-        핵심은 “AI가 똑똑한가”보다 “우리 작업이 덜 끊기게 설계되었는가”입니다. 같은 도구도 작업 경로와 검증 습관에 따라 체감 품질이 크게 달라집니다.
+        핵심은 “교육만 하는 스터디”도 아니고 “아이템만 하는 모임”도 아니라,
+        실제 적용 과정에서 필요한 내용을 바로 학습에 반영하는 운영 구조를 만드는 것입니다.
       </div>
     </section>
 
     <section class="section">
       <h2>스터디에서 잡을 공통 프레임</h2>
       <p>
-        가이드북 내용을 기준으로, 스터디에서는 아래 네 틀을 공통 언어로 사용합니다.
+        스터디에서는 AI Agent를 단순 질의응답 도구가 아니라, 실제 업무를 보조하는 실전 도구로 활용하기 위한 공통 기준을 함께 맞춥니다.
       </p>
 
       <div class="grid-2">
         <div class="card">
           <h3>작업 경로</h3>
           <p>
-            Chat, Projects, Cowork, Claude Code처럼 어떤 책상에서 일을 시작할지 구분합니다. 질문형, 문서형, 구현형 과제를 섞지 않는 것이 첫걸음입니다.
+            Chat, Projects, Cowork, Claude Code처럼 어떤 작업 공간에서 어떤 유형의 일을 시작할지 구분합니다.
+            질문형 작업, 문서형 작업, 구현형 작업을 섞지 않는 감각을 먼저 익힙니다.
           </p>
           <div class="chips">
             <span class="chip">Chat</span>
@@ -597,9 +601,10 @@
         </div>
 
         <div class="card">
-          <h3>하네스</h3>
+          <h3>실전 가드레일</h3>
           <p>
-            권한, 자동 개입 규칙, 폴더 구조, 테스트, 저장 위치를 묶은 작업장입니다. AI에게 “무엇을 읽고, 어디까지 수정하고, 무엇을 확인한 뒤 끝낼지”를 설계하는 층입니다.
+            권한, 자동 개입 규칙, 폴더 구조, 검증, 산출물 정리 방식을 함께 잡습니다.
+            AI에게 무엇을 읽히고 어디까지 맡길지, 결과를 어떻게 확인할지를 설계하는 감각을 익힙니다.
           </p>
           <div class="chips">
             <span class="chip red">Permissions</span>
@@ -609,42 +614,48 @@
           </div>
         </div>
       </div>
+
+      <div class="highlight-box">
+        이 스터디는 정해진 커리큘럼을 끝까지 소비하는 방식이 아니라,
+        실제 현업 적용 과정에서 필요한 내용을 함께 보완해 나가는 실전형 운영을 목표로 합니다.
+      </div>
     </section>
 
     <section class="section" id="modules">
       <h2>학습 모듈</h2>
       <p>
-        공식 문서의 핵심 기능과 가이드북의 실무 개념을 합쳐, 실제 스터디는 아래 모듈 순서로 진행합니다.
+        기본 교육은 아래 흐름으로 준비하되, 실제 운영 중에는 현업 아이템에서 나온 질문과 이슈를 반영해 유연하게 조정합니다.
       </p>
 
       <div class="timeline">
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Module 1. Claude Code 기본 감각</h3>
+            <h3>Module 1. AI Agent 기본 활용</h3>
             <div class="label">입문</div>
           </div>
           <p>
-            Claude Code를 단순 채팅 도구가 아니라 코드베이스를 읽고, 파일을 수정하고, 명령을 실행하는 개발용 에이전트로 이해합니다.
+            AI Agent를 단순 채팅 도구가 아니라, 문서를 읽고 정리하고 코드 작업을 도와주는 실무형 도구로 이해합니다.
           </p>
           <ul>
-            <li>Claude Code가 할 수 있는 일과 못 하는 일</li>
-            <li>질문형 사용과 구현·검증형 사용의 차이</li>
+            <li>AI Agent가 할 수 있는 일과 못 하는 일</li>
+            <li>질문형 사용과 구현형 사용의 차이</li>
             <li>작고 되돌리기 쉬운 첫 과제 고르기</li>
           </ul>
         </div>
 
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Module 2. 첫 30분 온보딩</h3>
+            <h3>Module 2. 첫 실습과 기본 운영 방식</h3>
             <div class="label">실습</div>
           </div>
           <p>
-            설치 자체보다 중요한 것은, 어떤 파일을 먼저 읽히고 어디에 결과를 남길지 정하는 것입니다. Claude Code는 CLAUDE.md, test/lint/build, safety 경계를 먼저 잡아야 덜 흔들립니다.
+            설치보다 중요한 것은 어떤 파일을 먼저 읽히고, 어떤 기준으로 결과를 검증할지 정하는 것입니다.
+            초반 2회는 안전한 첫 사용 경험을 만드는 데 집중합니다.
           </p>
           <ul>
-            <li>최소 CLAUDE.md 작성</li>
-            <li>테스트·린트 명령 정리</li>
-            <li>작은 버그를 대상으로 plan → implement → verify 루틴 체험</li>
+            <li>기본 규칙 파일과 작업 범위 정리</li>
+            <li>테스트·검증 루틴 이해</li>
+            <li>작은 예제로 plan → implement → verify 흐름 체험</li>
           </ul>
         </div>
 
@@ -654,12 +665,12 @@
             <div class="label">구조화</div>
           </div>
           <p>
-            ABOUT-ME, PROJECTS, TEMPLATES, OUTPUTS 같은 폴더 역할을 분리하고, 템플릿과 브리프를 따로 관리하는 이유를 익힙니다.
+            배경 정보, 작업 파일, 결과 파일, 템플릿을 분리해 관리하고, 나중에 다시 써먹을 수 있는 구조를 만드는 방법을 익힙니다.
           </p>
           <ul>
             <li>배경 파일, 작업 파일, 결과 파일 분리</li>
-            <li>template과 reference의 차이</li>
-            <li>plan.md, handoff.md, decision log의 역할</li>
+            <li>template과 reference의 차이 이해</li>
+            <li>plan, handoff, decision log 역할 정리</li>
           </ul>
         </div>
 
@@ -669,12 +680,13 @@
             <div class="label">가드레일</div>
           </div>
           <p>
-            allowlist, deny 규칙, 민감 경로 차단, review split, hooks 같은 기본 가드레일을 익힙니다. 빠르게 돌리는 것보다 안전하게 반복 가능하게 만드는 것이 목표입니다.
+            빠르게 돌리는 것보다 안전하게 반복 가능하게 만드는 것이 중요합니다.
+            권한 범위, 민감 경로, 검증 기준, 자동화 규칙을 함께 다룹니다.
           </p>
           <ul>
-            <li>settings 범위와 팀/개인 설정 분리</li>
-            <li>.env, 삭제, 배포 같은 고위험 경계 설계</li>
-            <li>hooks로 “기억나면 하자”를 자동 규칙으로 전환</li>
+            <li>설정 범위와 팀/개인 설정 분리</li>
+            <li>고위험 작업 경계 설계</li>
+            <li>hooks와 verify를 통한 반복 작업 자동화</li>
           </ul>
         </div>
 
@@ -684,100 +696,86 @@
             <div class="label">개발 흐름</div>
           </div>
           <p>
-            VS Code 연동, inline diff, plan review, @-mention, Git/worktree 등 실제 개발 흐름에서 체감되는 기능을 실습합니다.
+            VS Code 연동, diff 확인, 계획 검토, 여러 파일 수정, handoff 정리처럼 실제 개발 흐름에서 자주 쓰게 되는 기능을 실습합니다.
           </p>
           <ul>
-            <li>VS Code 확장과 CLI의 역할 차이</li>
+            <li>IDE 연동과 CLI 활용 차이</li>
             <li>여러 파일 수정과 검토 흐름</li>
-            <li>worktree, review split, handoff를 활용한 병렬 작업</li>
+            <li>실전 업무에 맞는 작업 패턴 정리</li>
           </ul>
         </div>
 
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Module 6. Skills와 MCP</h3>
+            <h3>Module 6. Skills, MCP, 운영 자산화</h3>
             <div class="label">확장</div>
           </div>
           <p>
-            반복 절차는 Skill로, 외부 시스템 연결은 MCP로, 팀 표준 배포는 Plugin 또는 팀 규칙으로 읽는 감각을 익힙니다.
+            반복 절차는 Skill로 정리하고, 외부 시스템 연동은 MCP 같은 연결 구조로 이해합니다.
+            실전에서 자주 쓰는 방법을 팀 자산으로 남기는 것이 목표입니다.
           </p>
           <ul>
-            <li>SKILL.md 기반 반복 절차 재사용</li>
-            <li>MCP를 통한 외부 도구 연결 개념 이해</li>
-            <li>우리 팀 업무에 필요한 연결과 아닌 연결 구분</li>
+            <li>반복 절차를 재사용 가능한 형태로 정리</li>
+            <li>외부 시스템 연결 개념 이해</li>
+            <li>우리 팀에 필요한 운영 자산 축적</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section" id="roadmap">
-      <h2>연간 운영 로드맵</h2>
+      <h2>운영 로드맵</h2>
       <p>
-        2주 1회, 90분 운영 기준으로 초반은 공통 기반 학습, 중반은 실전 적용, 후반은 각자 선택한 AI Item 실습과 AI Expert 연계로 가져갑니다.
+        초반에는 AI Agent 기본 사용법을 익히고, 이후에는 교육과 현업 아이템을 병행합니다.
+        12월부터는 AI Expert 시험 대비를 중심으로 후반부 학습을 운영합니다.
       </p>
 
       <div class="timeline">
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Phase 1. 4월 ~ 5월</h3>
-            <div class="label">기본 감각</div>
+            <h3>Phase 1. 초반 2회</h3>
+            <div class="label">기본 적응</div>
           </div>
-          <p>작업 경로, 하네스, 첫 30분 온보딩, 파일/폴더 구조, plan-before-edit 감각을 익힙니다.</p>
+          <p>
+            AI Agent를 실무에서 활용하기 위한 공통 기반을 익히는 단계입니다.
+          </p>
           <ul>
-            <li>Claude Code 개요와 Quickstart</li>
-            <li>작은 성공 과제 선정</li>
-            <li>CLAUDE.md, test, lint, output 구조 만들기</li>
+            <li>AI Agent 기본 사용법 이해</li>
+            <li>질문형 사용과 구현형 사용의 차이 익히기</li>
+            <li>작업 경로, 파일 구조, 검증 방식의 기본 감각 익히기</li>
+            <li>작고 안전한 예제로 첫 실습 진행</li>
           </ul>
         </div>
 
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Phase 2. 6월 ~ 7월</h3>
-            <div class="label">운영 구조</div>
+            <h3>Phase 2. 중반 운영</h3>
+            <div class="label">교육 + 실전 병행</div>
           </div>
-          <p>설정 범위, 권한 모드, hooks, verify, handoff, review split처럼 장기적으로 오래 남는 운영 습관을 붙입니다.</p>
+          <p>
+            AI Agent 교육과 현업 아이템을 함께 진행하는 핵심 구간입니다.
+            아이템 진행 중 나온 질문과 어려운 내용을 다음 회차 교육에 반영합니다.
+          </p>
           <ul>
-            <li>settings scope 이해</li>
-            <li>권한 허용 목록 설계</li>
-            <li>작업 후 검증 및 handoff 기록</li>
+            <li>현업 적용 아이템 진행 및 공유</li>
+            <li>어려웠던 사례, 시행착오, 좋은 활용 사례 정리</li>
+            <li>공유된 내용을 바탕으로 다음 교육 주제 선정</li>
+            <li>공유할 내용이 없으면 AI Agent 교육 중심으로 진행</li>
           </ul>
         </div>
 
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Phase 3. 8월 ~ 9월</h3>
-            <div class="label">확장 기능</div>
+            <h3>Phase 3. 12월 이후</h3>
+            <div class="label">AI Expert 대비</div>
           </div>
-          <p>IDE 연동, Skills, MCP, subagent/worktree 같은 기능을 실습하고, 우리 팀에 필요한 것만 좁혀서 가져갑니다.</p>
+          <p>
+            실전 적용 경험을 바탕으로 AI Expert 시험 대비를 운영합니다.
+            단순 이론 암기가 아니라, 현업에서 사용해 본 경험과 시험 개념을 연결하는 방향으로 진행합니다.
+          </p>
           <ul>
-            <li>VS Code 실전 흐름</li>
-            <li>반복 작업을 Skill로 정리</li>
-            <li>MCP와 연결 범위 판단</li>
-          </ul>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-head">
-            <h3>Phase 4. 10월 ~ 11월</h3>
-            <div class="label">현업 적용</div>
-          </div>
-          <p>효과적인 AI Item을 함께 정리한 뒤, 각자 하고 싶은 아이템을 선택해 자유롭게 진행합니다.</p>
-          <ul>
-            <li>개별 또는 소규모 아이템 선정</li>
-            <li>PoC와 중간 리뷰</li>
-            <li>가이드, 템플릿, 규칙으로 팀 자산화</li>
-          </ul>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-head">
-            <h3>Phase 5. 12월 이후</h3>
-            <div class="label">확장 학습</div>
-          </div>
-          <p>실무 적용 경험을 바탕으로 AI Expert 시험 대비 흐름으로 자연스럽게 연결합니다.</p>
-          <ul>
-            <li>Python 튜토리얼 재정리</li>
-            <li>CS231n / CME295 기반 핵심 개념 복습</li>
+            <li>Python 및 AI 기초 개념 정리</li>
+            <li>핵심 이론 복습과 문제 풀이</li>
             <li>현업 적용 경험과 시험 개념 연결</li>
           </ul>
         </div>
@@ -787,26 +785,27 @@
     <section class="section">
       <h2>회차 운영 방식</h2>
       <p>
-        매 회차는 너무 이론적이거나 너무 산만해지지 않도록, 개념과 실제 실습을 함께 가져갑니다.
+        매 회차는 고정된 강의형 진행보다는, 교육과 실전 공유를 함께 운영하는 방식으로 진행합니다.
       </p>
 
       <div class="grid-2">
         <div class="card">
-          <h3>90분 기본 템플릿</h3>
+          <h3>기본 진행 흐름</h3>
           <ul>
-            <li>20분: 핵심 개념 정리</li>
-            <li>25분: 실제 데모 또는 사례 리뷰</li>
-            <li>35분: 직접 실습 또는 미니 과제</li>
-            <li>10분: 회고, 다음 회차 준비, handoff</li>
+            <li>AI Agent 활용 사례 또는 현업 아이템 진행 상황 공유</li>
+            <li>막혔던 내용, 어려웠던 내용, 같이 볼 만한 내용 정리</li>
+            <li>필요한 주제를 중심으로 교육 또는 데모 진행</li>
+            <li>다음 회차까지의 실습 또는 적용 과제 정리</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>매 회차 산출물</h3>
+          <h3>운영 방식의 특징</h3>
           <ul>
-            <li>짧은 실습 결과 또는 예제 파일</li>
-            <li>팀 공용 규칙 또는 템플릿 업데이트</li>
-            <li>다음 회차를 위한 질문 / TODO / handoff</li>
+            <li>공유할 내용이 있으면 실전 중심으로 진행</li>
+            <li>공유할 내용이 없으면 AI Agent 교육 중심으로 진행</li>
+            <li>교육 주제는 실제 현업 이슈를 반영해 유연하게 조정</li>
+            <li>실습 결과와 운영 노하우는 팀 자산으로 축적</li>
           </ul>
         </div>
       </div>
@@ -815,7 +814,8 @@
     <section class="section" id="resources">
       <h2>학습 자료</h2>
       <p>
-        아래 자료를 중심으로 학습합니다. 초반은 Claude Code 실전, 중반은 운영 구조와 확장, 후반은 AI Expert 연결 흐름입니다.
+        초반에는 AI Agent 기본 활용과 실전 감각을 익히고, 중반에는 운영 구조와 확장 방법을 익히며,
+        후반에는 AI Expert 대비와 연결합니다.
       </p>
 
       <div class="grid-2">
@@ -836,7 +836,7 @@
         <a class="resource" href="https://docs.anthropic.com/ko/docs/claude-code/settings" target="_blank" rel="noopener noreferrer">
           <div class="label">Official</div>
           <strong>Claude Code 설정</strong>
-          <p>/config, 전역/프로젝트/로컬 설정 범위, 권한 정책을 이해할 때 보는 핵심 문서</p>
+          <p>설정 범위, 권한 정책, 안전한 사용 기준을 이해할 때 보는 핵심 문서</p>
           <span>docs.anthropic.com</span>
         </a>
 
@@ -850,14 +850,14 @@
         <a class="resource" href="https://docs.anthropic.com/en/prompt-library/library" target="_blank" rel="noopener noreferrer">
           <div class="label">Official</div>
           <strong>Prompting Best Practices</strong>
-          <p>명확성, 예시, XML 구조화, tool use, agentic systems처럼 프롬프트와 작업 구조를 함께 보는 기준</p>
+          <p>명확성, 예시, 구조화, tool use, agentic systems처럼 프롬프트와 작업 구조를 함께 보는 기준</p>
           <span>docs.anthropic.com</span>
         </a>
 
         <a class="resource" href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">
           <div class="label">Official</div>
           <strong>MCP Introduction</strong>
-          <p>AI 앱을 외부 데이터, 도구, 워크플로우에 연결하는 표준을 이해하는 입문 자료</p>
+          <p>AI 앱을 외부 데이터, 도구, 워크플로우에 연결하는 표준 개념을 이해하는 입문 자료</p>
           <span>modelcontextprotocol.io</span>
         </a>
       </div>
