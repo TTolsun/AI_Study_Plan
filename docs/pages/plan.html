@@ -101,7 +101,6 @@
     }
 
     .topnav a:focus-visible,
-    .page-link:focus-visible,
     .resource:focus-visible,
     .quick-link:focus-visible {
       outline: 3px solid rgba(47, 103, 255, 0.28);
@@ -291,7 +290,7 @@
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-    .card, .phase-card, .resource, .page-link {
+    .card, .phase-card, .resource {
       position: relative;
       padding: 24px 22px;
       border-radius: var(--radius-md);
@@ -306,14 +305,14 @@
         color var(--transition);
     }
 
-    .card:hover, .phase-card:hover, .resource:hover, .page-link:hover {
+    .card:hover, .phase-card:hover, .resource:hover {
       transform: translateY(-4px);
       border-color: rgba(255, 87, 87, 0.16);
       background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,241,234,0.94));
       box-shadow: 0 18px 30px rgba(255, 87, 87, 0.12);
     }
 
-    .card::before, .phase-card::before, .resource::before, .page-link::before {
+    .card::before, .phase-card::before, .resource::before {
       content: "";
       position: absolute;
       left: 20px;
@@ -324,14 +323,14 @@
       background: linear-gradient(90deg, var(--blue), var(--sky));
     }
 
-    .card h3, .phase-card h3, .resource h3, .page-link h3 {
+    .card h3, .phase-card h3, .resource h3 {
       margin: 0 0 12px;
       font-size: 19px;
       line-height: 1.35;
       letter-spacing: -0.015em;
     }
 
-    .card p, .phase-card p, .resource p, .page-link p {
+    .card p, .phase-card p, .resource p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
@@ -478,7 +477,7 @@
       .subtitle { font-size: 16px; }
       .section h2 { font-size: 24px; }
 
-      .card, .phase-card, .page-link, .resource, .meta-card {
+      .card, .phase-card, .resource, .meta-card {
         padding: 18px 16px;
       }
 
@@ -506,12 +505,9 @@
       </h1>
 
       <p class="subtitle">
-        이번 스터디는 AI Agent의 기본 사용법을 익히는 교육과, 실제 Camera HAL 업무에 적용할 수 있는 실전 아이템을 함께 운영하는 방식으로 진행합니다.
-        초반 2회는 공통적으로 AI Agent를 안전하고 효율적으로 사용하는 방법을 익히는 데 집중하고,
-        이후에는 AI Agent 교육과 현업 적용 아이템을 병행합니다.
-        현업 아이템 진행 중 공유할 이슈나 어려운 내용이 생기면 이를 다음 회차 교육 주제로 연결하고,
-        별도 공유할 내용이 없는 경우에는 AI Agent 활용 역량을 높이는 교육 중심으로 운영합니다.
-        12월부터는 AI Expert 시험 대비를 중심으로 후반부 학습을 진행합니다.
+        이번 스터디는 AI Agent 기본 활용을 익히는 교육과, Camera HAL 업무에 적용할 실전 아이템을 함께 운영하는 방식으로 진행합니다.
+        초반에는 공통적인 사용법과 검증 습관을 익히고, 이후에는 현업 아이템 공유와 교육을 병행합니다.
+        실전 적용 과정에서 나온 질문과 어려운 내용은 다음 회차 교육 주제로 연결하며, 12월부터는 AI Expert 시험 대비로 확장합니다.
       </p>
 
       <div class="meta-grid">
@@ -552,7 +548,7 @@
           <div class="label">원칙 1</div>
           <h3>초반에는 공통 기반부터 익히기</h3>
           <p>
-            초반 2회는 AI Agent 기본 사용법, 작업 경로, 검증 습관, 안전한 활용 방식을 공통으로 익히는 데 집중합니다.
+            초반에는 AI Agent 기본 사용법, 작업 경로, 검증 습관, 안전한 활용 방식을 공통으로 익히는 데 집중합니다.
           </p>
         </div>
 
@@ -574,8 +570,8 @@
       </div>
 
       <div class="highlight-box">
-        핵심은 “교육만 하는 스터디”도 아니고 “아이템만 하는 모임”도 아니라,
-        실제 적용 과정에서 필요한 내용을 바로 학습에 반영하는 운영 구조를 만드는 것입니다.
+        핵심은 정해진 교육을 따라가는 것이 아니라,
+        실제 현업 적용 과정에서 필요한 내용을 함께 보완해 나가는 운영 구조를 만드는 것입니다.
       </div>
     </section>
 
@@ -586,19 +582,19 @@
       </p>
 
       <div class="grid-2">
-        <div class="card">
-          <h3>작업 경로</h3>
-          <p>
-            Chat, Projects, Cowork, Claude Code처럼 어떤 작업 공간에서 어떤 유형의 일을 시작할지 구분합니다.
-            질문형 작업, 문서형 작업, 구현형 작업을 섞지 않는 감각을 먼저 익힙니다.
-          </p>
-          <div class="chips">
-            <span class="chip">Chat</span>
-            <span class="chip">Projects</span>
-            <span class="chip">Cowork</span>
-            <span class="chip">Claude Code</span>
-          </div>
-        </div>
+		<div class="card">
+		  <h3>컨텍스트 설계</h3>
+		  <p>
+		    AI Agent에게 무엇을 읽히고, 어떤 제약을 주고, 어떤 산출물을 기대할지를 먼저 정합니다.
+			코드, 로그, 설계 문서, 규칙 문서를 어떻게 조합해 넣느냐에 따라 결과 품질이 크게 달라집니다.
+		  </p>
+		  <div class="chips">
+		    <span class="chip">Rules</span>
+		    <span class="chip">Logs</span>
+		    <span class="chip">Design Docs</span>
+		    <span class="chip">Outputs</span>
+		  </div>
+		</div>
 
         <div class="card">
           <h3>실전 가드레일</h3>
@@ -613,11 +609,6 @@
             <span class="chip purple">Handoff</span>
           </div>
         </div>
-      </div>
-
-      <div class="highlight-box">
-        이 스터디는 정해진 커리큘럼을 끝까지 소비하는 방식이 아니라,
-        실제 현업 적용 과정에서 필요한 내용을 함께 보완해 나가는 실전형 운영을 목표로 합니다.
       </div>
     </section>
 
@@ -650,12 +641,14 @@
           </div>
           <p>
             설치보다 중요한 것은 어떤 파일을 먼저 읽히고, 어떤 기준으로 결과를 검증할지 정하는 것입니다.
-            초반 2회는 안전한 첫 사용 경험을 만드는 데 집중합니다.
+            초반에는 안전한 첫 사용 경험을 만드는 데 집중합니다.
+            Camera HAL 업무 기준으로는 복잡한 동작을 바로 수정하기보다, 기존 로그나 문서를 바탕으로 흐름을 정리하고 작은 보조 작업부터 맡기는 방식으로 시작합니다.
           </p>
           <ul>
             <li>기본 규칙 파일과 작업 범위 정리</li>
             <li>테스트·검증 루틴 이해</li>
             <li>작은 예제로 plan → implement → verify 흐름 체험</li>
+            <li>예시: capture request / result flow 요약, 기존 디버깅 로그 정리</li>
           </ul>
         </div>
 
@@ -697,11 +690,13 @@
           </div>
           <p>
             VS Code 연동, diff 확인, 계획 검토, 여러 파일 수정, handoff 정리처럼 실제 개발 흐름에서 자주 쓰게 되는 기능을 실습합니다.
+            Camera HAL 관점에서는 단순 코드 작성보다, 여러 경로에 흩어진 변경 사항을 함께 보고 로그·설계 문서·테스트 코드까지 연결해서 검토하는 흐름을 익히는 것이 중요합니다.
           </p>
           <ul>
             <li>IDE 연동과 CLI 활용 차이</li>
             <li>여러 파일 수정과 검토 흐름</li>
             <li>실전 업무에 맞는 작업 패턴 정리</li>
+            <li>예시: 디버깅 로그 기반 원인 추론, Gerrit 리뷰 전 변경 요약, 레거시 C++ 코드 리팩토링 초안 작성</li>
           </ul>
         </div>
 
@@ -713,11 +708,13 @@
           <p>
             반복 절차는 Skill로 정리하고, 외부 시스템 연동은 MCP 같은 연결 구조로 이해합니다.
             실전에서 자주 쓰는 방법을 팀 자산으로 남기는 것이 목표입니다.
+            Camera HAL 업무에서는 반복적으로 수행하는 리뷰 체크, 테스트 보강, 문서 정리 같은 작업을 재사용 가능한 형태로 축적하는 것이 특히 중요합니다.
           </p>
           <ul>
             <li>반복 절차를 재사용 가능한 형태로 정리</li>
             <li>외부 시스템 연결 개념 이해</li>
             <li>우리 팀에 필요한 운영 자산 축적</li>
+            <li>예시: Negative TC 생성 보조, patch pre-check 규칙화, 설계 문서·handoff 문서 템플릿 자산화</li>
           </ul>
         </div>
       </div>
@@ -733,11 +730,12 @@
       <div class="timeline">
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Phase 1. 초반 2회</h3>
+            <h3>Phase 1. 초반 운영</h3>
             <div class="label">기본 적응</div>
           </div>
           <p>
-            AI Agent를 실무에서 활용하기 위한 공통 기반을 익히는 단계입니다.
+            초반 운영에서는 AI Agent를 실무에 적용하기 위한 공통 기반을 맞추고,
+            이후 실전 아이템을 진행할 수 있도록 기본 사용 흐름과 검증 습관을 정리합니다.
           </p>
           <ul>
             <li>AI Agent 기본 사용법 이해</li>
@@ -754,19 +752,20 @@
           </div>
           <p>
             AI Agent 교육과 현업 아이템을 함께 진행하는 핵심 구간입니다.
-            아이템 진행 중 나온 질문과 어려운 내용을 다음 회차 교육에 반영합니다.
+            Camera HAL 실무에서 실제로 부딪히는 로그 분석, 테스트 보강, 리뷰 준비, 문서 정리 같은 주제를 중심으로 아이템을 진행하고 사례를 축적합니다.
           </p>
           <ul>
             <li>현업 적용 아이템 진행 및 공유</li>
             <li>어려웠던 사례, 시행착오, 좋은 활용 사례 정리</li>
             <li>공유된 내용을 바탕으로 다음 교육 주제 선정</li>
             <li>공유할 내용이 없으면 AI Agent 교육 중심으로 진행</li>
+            <li>예시: HAL 로그 기반 원인 후보 추리, 테스트 코드 보강 포인트 도출, 리뷰 코멘트 초안 작성, 설계 문서 최신화</li>
           </ul>
         </div>
 
         <div class="phase-card">
           <div class="phase-head">
-            <h3>Phase 3. 12월 이후</h3>
+            <h3>Phase 3. 후반 운영</h3>
             <div class="label">AI Expert 대비</div>
           </div>
           <p>
@@ -814,8 +813,8 @@
     <section class="section" id="resources">
       <h2>학습 자료</h2>
       <p>
-        초반에는 AI Agent 기본 활용과 실전 감각을 익히고, 중반에는 운영 구조와 확장 방법을 익히며,
-        후반에는 AI Expert 대비와 연결합니다.
+        아래 자료를 중심으로 AI Agent 기본 활용, 운영 구조, 확장 방법을 학습합니다.
+        이후에는 실전 아이템과 연결해 필요한 내용을 선택적으로 참고합니다.
       </p>
 
       <div class="grid-2">
@@ -860,6 +859,57 @@
           <p>AI 앱을 외부 데이터, 도구, 워크플로우에 연결하는 표준 개념을 이해하는 입문 자료</p>
           <span>modelcontextprotocol.io</span>
         </a>
+      </div>
+
+      <div class="highlight-box" style="margin-top: 24px;">
+        학습한 내용을 바로 실무에 연결할 수 있도록, 아래와 같은 실전 예시 아이템을 함께 다룹니다.
+        실제 운영 시에는 우선순위와 난이도에 따라 아이템을 조정할 수 있습니다.
+      </div>
+
+      <div class="grid-3" style="margin-top: 20px;">
+        <div class="card">
+          <div class="label">실전 예시 1</div>
+          <h3>HAL 로그 기반 원인 추론 보조</h3>
+          <p>
+            반복적으로 확인하는 로그를 AI Agent가 먼저 정리하고,
+            주요 에러 지점과 의심 경로를 빠르게 추려보는 아이템입니다.
+            초기 분석 시간을 줄이고, 공유용 요약 자료를 만드는 데도 활용할 수 있습니다.
+          </p>
+          <div class="chips">
+            <span class="chip">Log 분석</span>
+            <span class="chip">원인 후보</span>
+            <span class="chip">요약 자동화</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">실전 예시 2</div>
+          <h3>테스트 코드 보강 포인트 도출</h3>
+          <p>
+            기존 Positive TC와 구현 코드를 기준으로,
+            빠진 Negative TC나 보강이 필요한 검증 포인트를 정리하는 아이템입니다.
+            테스트 누락 영역을 빠르게 확인하고, 품질 개선 과제를 찾는 데 도움이 됩니다.
+          </p>
+          <div class="chips">
+            <span class="chip red">Negative TC</span>
+            <span class="chip mint">Coverage</span>
+            <span class="chip purple">검증 보강</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">실전 예시 3</div>
+          <h3>리뷰·문서 정리 자동화</h3>
+          <p>
+            patch 변경 내용을 요약하고, 설계 문서나 handoff 문서 초안을 빠르게 만드는 아이템입니다.
+            코드 리뷰 전 설명 자료를 정리하거나, 변경 내용을 팀 자산으로 남길 때 유용합니다.
+          </p>
+          <div class="chips">
+            <span class="chip">Patch 요약</span>
+            <span class="chip yellow">Handoff</span>
+            <span class="chip">문서화</span>
+          </div>
+        </div>
       </div>
     </section>
 
