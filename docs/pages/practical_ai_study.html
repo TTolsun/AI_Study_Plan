@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera HAL AI Study - Practical AI Study</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="practical_ai_study.html" aria-current="page">Practical AI Study</a>
+      <a href="practical_ai_usecases.html">Practical AI Use Cases</a>
+      <a href="expert.html">AI Expert</a>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">PRACTICAL AI STUDY</div>
+
+      <h1>
+        <span class="headline-accent">Camera HAL</span> AI Agent 실전 학습
+      </h1>
+
+      <p class="subtitle">
+        이 페이지의 목표는 AI Agent를 단순 질의응답 도구가 아니라, Camera HAL 업무에서 코드 이해, 로그 정리,
+        작은 수정, 검증, 문서화를 보조하는 실전 도구로 안전하게 사용하는 습관을 만드는 것입니다.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">운영 시작</div>
+          <div class="meta-value">2026.04.27</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">운영 주기</div>
+          <div class="meta-value">2주 1회</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">회당 시간</div>
+          <div class="meta-value">90분</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">중심 범위</div>
+          <div class="meta-value">AI Agent 활용</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-secondary" href="#principles">운영 원칙</a>
+        <a class="btn btn-secondary" href="#frame">공통 프레임</a>
+        <a class="btn btn-secondary" href="#modules">학습 모듈</a>
+        <a class="btn btn-secondary" href="#session">회차 운영</a>
+        <a class="btn btn-secondary" href="#resources">학습 자료</a>
+      </div>
+    </header>
+
+    <section class="section" id="principles">
+      <h2>운영 원칙</h2>
+      <p>
+        Practical AI Study는 AI Agent를 업무에 바로 쓰기 전에, 공통 사용 기준과 검증 습관을 먼저 맞추는 과정입니다.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">원칙 1</div>
+          <h3>작게 시작하기</h3>
+          <p>
+            처음부터 큰 기능 구현을 맡기기보다, 코드 흐름 요약, 로그 정리, 테스트 아이디어 도출처럼
+            실패해도 되돌리기 쉬운 작업부터 시작합니다.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="label">원칙 2</div>
+          <h3>컨텍스트를 먼저 설계하기</h3>
+          <p>
+            AI Agent에게 어떤 파일, 로그, 설계 문서, 규칙 문서를 읽힐지 먼저 정합니다.
+            좋은 답변은 좋은 질문보다 좋은 입력 구조에서 나옵니다. 아쉽지만 기계도 눈치로 일하지 않습니다.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="label">원칙 3</div>
+          <h3>반드시 검증하기</h3>
+          <p>
+            AI가 만든 결과는 초안으로 보고, diff 확인, 빌드, 테스트, 로그 검증을 통해 사람이 최종 판단합니다.
+            빠른 자동화보다 안전한 반복 가능성이 우선입니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        핵심은 AI에게 일을 던지는 것이 아니라, AI가 낸 결과를 검증 가능한 단위로 쪼개고 안전하게 반복하는 사용법을 익히는 것.
+      </div>
+    </section>
+
+    <section class="section" id="frame">
+      <h2>스터디에서 맞출 공통 프레임</h2>
+      <p>
+        스터디에서는 도구별 사용법보다 먼저, 어떤 방식으로 AI Agent에게 일을 맡기고 확인할지에 대한 공통 기준을 맞춥니다.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>컨텍스트 설계</h3>
+          <p>
+            AI Agent에게 무엇을 읽히고, 어떤 제약을 주고, 어떤 산출물을 기대할지 먼저 정의합니다.
+            Camera HAL 업무에서는 코드, 로그, 설계 문서, 규칙 문서를 어떻게 조합하느냐가 결과 품질을 크게 좌우합니다.
+          </p>
+          <div class="chips">
+            <span class="chip">Rules</span>
+            <span class="chip">Logs</span>
+            <span class="chip">Design Docs</span>
+            <span class="chip">Expected Output</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>실전 가드레일</h3>
+          <p>
+            권한, 자동 개입 규칙, 민감 경로, 검증 명령, 산출물 정리 방식을 함께 잡습니다.
+            어디까지 맡기고 어디서 멈춰야 하는지 정하지 않으면, AI Agent는 성실하게 이상한 방향으로 달릴 수 있습니다.
+          </p>
+          <div class="chips">
+            <span class="chip red">Permissions</span>
+            <span class="chip mint">Hooks</span>
+            <span class="chip yellow">Verify</span>
+            <span class="chip purple">Handoff</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>작업 단위 쪼개기</h3>
+          <p>
+            큰 요청을 한 번에 맡기지 않고, 이해 → 계획 → 수정 → 검증 → 정리 단계로 나눕니다.
+            이렇게 해야 결과를 사람이 추적할 수 있고, 잘못된 변경도 빠르게 되돌릴 수 있습니다.
+          </p>
+          <div class="chips">
+            <span class="chip">Understand</span>
+            <span class="chip">Plan</span>
+            <span class="chip">Implement</span>
+            <span class="chip">Review</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>산출물 남기기</h3>
+          <p>
+            좋은 사용 사례, 실패 사례, 프롬프트, 체크리스트, handoff 문서를 남겨 다음 작업에 재사용합니다.
+            한 번 배운 내용을 매번 새로 설명하는 일은 인류 문명의 낭비입니다.
+          </p>
+          <div class="chips">
+            <span class="chip">Checklist</span>
+            <span class="chip">Prompt</span>
+            <span class="chip">Decision Log</span>
+            <span class="chip">Template</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <h2>학습 모듈</h2>
+      <p>
+        Practical AI Study의 학습 모듈은 AI Agent를 안전하게 업무에 적용하기 위한 기본기 중심으로 구성합니다.
+      </p>
+
+      <div class="timeline">
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 1. AI Agent 기본 활용</h3>
+            <div class="label">입문</div>
+          </div>
+          <p>
+            AI Agent를 단순 채팅 도구가 아니라, 문서를 읽고 정리하고 코드 작업을 보조하는 실무형 도구로 이해합니다.
+          </p>
+          <ul>
+            <li>AI Agent가 잘하는 일과 조심해야 할 일</li>
+            <li>질문형 사용과 구현형 사용의 차이</li>
+            <li>작고 되돌리기 쉬운 첫 과제 고르기</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 2. 첫 실습과 기본 운영 방식</h3>
+            <div class="label">실습</div>
+          </div>
+          <p>
+            설치보다 중요한 것은 어떤 파일을 먼저 읽히고, 어떤 기준으로 결과를 검증할지 정하는 것입니다.
+            초반에는 안전한 첫 사용 경험을 만드는 데 집중합니다.
+          </p>
+          <ul>
+            <li>기본 규칙 파일과 작업 범위 정리</li>
+            <li>작은 예제로 plan → implement → verify 흐름 체험</li>
+            <li>예시: capture request / result flow 요약, 기존 디버깅 로그 정리</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 3. 파일 구조와 템플릿</h3>
+            <div class="label">구조화</div>
+          </div>
+          <p>
+            배경 정보, 작업 파일, 결과 파일, 템플릿을 분리해 관리하고, 나중에 다시 사용할 수 있는 구조를 만듭니다.
+          </p>
+          <ul>
+            <li>background, task, output, reference 파일 구분</li>
+            <li>template과 reference의 차이 이해</li>
+            <li>plan, handoff, decision log 역할 정리</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 4. 권한과 검증</h3>
+            <div class="label">가드레일</div>
+          </div>
+          <p>
+            빠르게 돌리는 것보다 안전하게 반복 가능하게 만드는 것이 중요합니다.
+            권한 범위, 민감 경로, 검증 기준, 자동화 규칙을 함께 다룹니다.
+          </p>
+          <ul>
+            <li>개인 설정과 팀 공통 설정 분리</li>
+            <li>고위험 작업 경계와 승인 기준 설계</li>
+            <li>hooks와 verify를 통한 반복 검증 자동화</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 5. IDE 연동과 실전 워크플로우</h3>
+            <div class="label">개발 흐름</div>
+          </div>
+          <p>
+            VS Code 연동, diff 확인, 계획 검토, 여러 파일 수정, handoff 정리처럼 실제 개발 흐름에서 자주 쓰는 기능을 실습합니다.
+          </p>
+          <ul>
+            <li>IDE 연동과 CLI 활용 차이</li>
+            <li>여러 파일 수정 시 계획 검토와 diff 확인</li>
+            <li>예시: Gerrit 리뷰 전 변경 요약, 레거시 C++ 코드 리팩토링 초안 작성</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-head">
+            <h3>Module 6. Skills, MCP, 운영 자산화</h3>
+            <div class="label">확장</div>
+          </div>
+          <p>
+            반복 절차는 Skill로 정리하고, 외부 시스템 연동은 MCP 같은 연결 구조로 이해합니다.
+            자주 쓰는 사용법을 개인 요령이 아니라 팀 자산으로 남기는 것이 목표입니다.
+          </p>
+          <ul>
+            <li>반복 절차를 재사용 가능한 형태로 정리</li>
+            <li>외부 시스템 연결 개념 이해</li>
+            <li>체크리스트, 규칙 문서, handoff 템플릿 자산화</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="session">
+      <h2>회차 운영 방식</h2>
+      <p>
+        매 회차는 강의만 듣고 끝나는 방식이 아니라, 짧은 교육과 실습, 결과 공유가 이어지는 구조로 운영합니다.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>기본 진행 흐름</h3>
+          <ul>
+            <li>지난 회차 실습 결과와 막힌 지점 공유</li>
+            <li>이번 회차 핵심 개념 또는 기능 설명</li>
+            <li>작은 예제로 AI Agent 사용 흐름 실습</li>
+            <li>다음 회차까지 적용할 작은 과제 정리</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>실습 기준</h3>
+          <ul>
+            <li>한 번에 큰 변경을 맡기지 않고 작은 단위로 요청</li>
+            <li>AI가 만든 결과는 diff, 빌드, 테스트, 로그로 확인</li>
+            <li>좋았던 프롬프트와 실패 사례를 함께 기록</li>
+            <li>반복 가능한 절차는 체크리스트나 템플릿으로 정리</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <h2>학습 자료</h2>
+      <p>
+        아래 자료는 Practical AI Study에서 AI Agent 기본 활용, IDE 연동, 권한, 확장 구조를 이해하기 위한 참고 자료입니다.
+      </p>
+
+      <div class="grid-2">
+        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>Claude Code Overview</strong>
+          <p>코드베이스 읽기, 파일 수정, 명령 실행, 개발 도구 연동까지 Claude Code의 기본 성격을 잡는 출발점</p>
+          <span>docs.anthropic.com</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/ide-integrations" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>Use Claude Code in VS Code</strong>
+          <p>inline diff, plan review, @-mentions, worktree, git 흐름처럼 개발자가 체감하는 핵심 기능 정리</p>
+          <span>docs.anthropic.com</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/ko/docs/claude-code/settings" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>Claude Code 설정</strong>
+          <p>설정 범위, 권한 정책, 안전한 사용 기준을 이해할 때 보는 핵심 문서</p>
+          <span>docs.anthropic.com</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/docs/claude-code/skills" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>Extend Claude with Skills</strong>
+          <p>반복 절차를 SKILL.md로 만들고, 팀에 공유 가능한 형태로 정리할 때 참고할 문서</p>
+          <span>docs.anthropic.com</span>
+        </a>
+
+        <a class="resource" href="https://docs.anthropic.com/en/prompt-library/library" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>Prompting Best Practices</strong>
+          <p>명확성, 예시, 구조화, tool use, agentic systems처럼 프롬프트와 작업 구조를 함께 보는 기준</p>
+          <span>docs.anthropic.com</span>
+        </a>
+
+        <a class="resource" href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">
+          <div class="label">Official</div>
+          <strong>MCP Introduction</strong>
+          <p>AI 앱을 외부 데이터, 도구, 워크플로우에 연결하는 표준 개념을 이해하는 입문 자료</p>
+          <span>modelcontextprotocol.io</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Camera HAL Part AI Study · 2026 · Designed & Built by KH
+    </footer>
+  </div>
+</body>
+</html>
