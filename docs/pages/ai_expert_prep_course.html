@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera HAL AI Study | AI Expert Prep Course</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav" aria-label="Study pages">
+      <a href="../index.html">Home</a>
+      <a href="practical_ai_study.html">Practical AI Study</a>
+      <a href="practical_ai_usecases.html">Practical AI Use Cases</a>
+      <a class="active" aria-current="page" href="ai_expert_prep_course.html">AI Expert Prep Course</a>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">AI EXPERT PREP COURSE</div>
+
+      <h1>
+        <span class="headline-accent">AI Expert</span> 시험 대비반
+      </h1>
+
+      <p class="subtitle">
+        AI Expert 시험 합격을 목표로 Python 기초, 딥러닝·컴퓨터비전 기초, Transformer/LLM 입문 내용을 압축 학습합니다.
+        전체 일정은 강의 8회와 최종 모의고사 1회로 구성하고, Python 범위 점검과 딥러닝·CV·LLM 범위 점검은 별도 회차가 아니라 해당 강의 마지막 20분을 활용해 진행합니다.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">운영 주기</div>
+          <div class="meta-value">2주 1회</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">회당 시간</div>
+          <div class="meta-value">90분</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">전체 일정</div>
+          <div class="meta-value">강의 8회 + 모의고사 1회</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">점검 방식</div>
+          <div class="meta-value">강의 내 2회 + 최종 모의고사 1회</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-secondary" href="#principles">운영 원칙</a>
+        <a class="btn btn-secondary" href="#curriculum">커리큘럼</a>
+        <a class="btn btn-secondary" href="#mock">점검 계획</a>
+        <a class="btn btn-secondary" href="#schedule">운영 일정</a>
+        <a class="btn btn-secondary" href="#resources">학습 자료</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="principles">
+        <h2>운영 원칙</h2>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">원칙 1</div>
+            <h3>사전 학습 후 세션에서 압축 정리</h3>
+            <p>
+              링크 자료와 영상은 세션 전에 보고 들어오는 것을 기본으로 합니다.
+              세션에서는 시험에 나올 만한 개념, 헷갈리는 비교 포인트, 계산 문제를 중심으로 정리합니다.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="label">원칙 2</div>
+            <h3>강의 중 예상문제 풀이 포함</h3>
+            <p>
+              각 강의 회차마다 예상문제 1~3개를 함께 풉니다.
+              단순히 내용을 들었다는 상태에서 끝나지 않도록, 이해가 부족한 지점을 빠르게 확인합니다.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="label">원칙 3</div>
+            <h3>범위 점검은 강의 마지막 20분 활용</h3>
+            <p>
+              Python 범위 점검과 딥러닝·CV·LLM 범위 점검은 별도 회차로 잡지 않습니다.
+              각각 Python 마무리 회차와 전체 이론 마무리 회차의 마지막 20분을 사용합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          기본 운영안은 총 9회입니다. 강의 8회와 최종 모의고사 1회로 구성하며,
+          1차 Python 범위 점검과 2차 딥러닝·CV·LLM 범위 점검은 강의 시간 안에서 20분씩 진행합니다.
+        </div>
+      </section>
+
+      <section class="section" id="session-format">
+        <h2>90분 회차 운영 방식</h2>
+        <p>
+          모든 강의 회차를 같은 방식으로 운영하지 않고, 일반 강의 회차와 범위 점검 포함 회차를 구분합니다.
+          시험 대비반의 목적은 단순한 진도 소화가 아니라, 실제 시험에서 취약해질 수 있는 지점을 미리 확인하고 보완하는 것입니다.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">일반 강의 회차</div>
+            <h3>개념 정리 + 예상문제</h3>
+            <p>
+              핵심 개념 정리 55분, 예상문제 풀이 25분, 오답·다음 과제 정리 10분으로 운영합니다.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="label">범위 점검 포함 회차</div>
+            <h3>강의 70분 + 점검 20분</h3>
+            <p>
+              Session 02와 Session 08은 마지막 20분을 범위 점검으로 사용합니다.
+              문제 수는 3~5문항 수준으로 제한하고, 오답은 다음 회차 시작 시 짧게 복습합니다.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="label">최종 모의고사 회차</div>
+            <h3>전체 범위 실전 점검</h3>
+            <p>
+              마지막 회차는 별도 모의고사로 운영합니다.
+              전체 범위를 섞어 풀고, 개인별 오답노트와 최종 암기 카드를 정리합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="curriculum">
+        <h2>AI Expert 대비 커리큘럼</h2>
+        <p>
+          Python을 먼저 정리한 뒤 Python 범위 점검을 강의 마지막 20분에 진행합니다.
+          이후 CS231n과 CME295를 학습하고, 전체 이론 마무리 회차에서 딥러닝·CV·LLM 범위 점검을 20분 진행합니다.
+          마지막에는 별도 최종 모의고사 1회로 전체 범위를 점검합니다.
+        </p>
+
+        <div class="timeline">
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 01 · Lecture</span>
+              <div class="session-title">Python 핵심 문법과 코드 읽기</div>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip mint">Syntax</span>
+                <span class="chip yellow">Code Reading</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>Python 기본 실행 흐름, 숫자/문자열, list·tuple·dict·set, 조건문, 반복문, slicing, comprehension을 시험용 코드 해석 관점으로 정리합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>list slicing 결과, dict/set 특징, 반복문 실행 결과, mutable/immutable 구분, comprehension 결과 예측</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 02 · Lecture + Check</span>
+              <div class="session-title">Python 함수·모듈·예외·파일 처리 + 1차 범위 점검</div>
+              <div class="chips">
+                <span class="chip">Function</span>
+                <span class="chip purple">Module</span>
+                <span class="chip red">20min Check</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>함수 인자, scope, lambda, 모듈 import, package 개념, 예외 처리, 파일 I/O, class 기본을 정리합니다. 마지막 20분은 Python 범위 점검에 사용합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>점검 방향</strong>
+              <p>default argument, import 방식, try/except/finally 실행 순서, 파일 읽기 흐름, class attribute와 instance attribute 차이</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 03 · Lecture</span>
+              <div class="session-title">CS231n Module 1: Classification과 학습 기초</div>
+              <div class="chips">
+                <span class="chip red">kNN</span>
+                <span class="chip yellow">Linear Classifier</span>
+                <span class="chip mint">Loss</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>Image classification, kNN, train/validation/test split, linear classifier, SVM hinge loss, softmax cross-entropy, regularization을 하나의 흐름으로 정리합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>k값 변화 영향, validation set 목적, loss function 구분, regularization 효과, overfitting/underfitting 판단</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 04 · Lecture</span>
+              <div class="session-title">CS231n Module 1~2: Optimization, NN, CNN</div>
+              <div class="chips">
+                <span class="chip">SGD</span>
+                <span class="chip purple">Backprop</span>
+                <span class="chip red">CNN</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>Gradient descent, learning rate, backpropagation, activation function, dropout, batch normalization, convolution layer, pooling, stride, padding, receptive field를 정리합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>gradient check 목적, learning rate 문제, dropout/BatchNorm 효과, CNN 출력 feature map 크기 계산, parameter 수 계산</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 05 · Lecture</span>
+              <div class="session-title">CS231n Module 2: CNN 해석과 Transfer Learning</div>
+              <div class="chips">
+                <span class="chip mint">Visualization</span>
+                <span class="chip purple">Transfer</span>
+                <span class="chip yellow">Fine-tuning</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>CNN visualization, feature embedding, architecture별 특징, transfer learning, freezing/fine-tuning 전략을 정리합니다. Camera 업무 관점에서는 모델이 이미지를 어떤 feature로 보는지 감을 잡는 구간입니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>feature visualization 목적, 데이터가 적을 때의 학습 전략, fine-tuning/freezing 차이, CNN 구조 요소별 역할</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 06 · Lecture</span>
+              <div class="session-title">CME295 Lecture 1: Transformer 기본 구조</div>
+              <div class="chips">
+                <span class="chip">Tokenization</span>
+                <span class="chip red">Attention</span>
+                <span class="chip mint">Transformer</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>Tokenization, embedding, word2vec, RNN/LSTM 한계, attention mechanism, Transformer architecture를 LLM 입문 관점으로 정리합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>RNN/LSTM 한계, attention이 필요한 이유, embedding 의미, Transformer block 구성, self-attention의 입력·출력 관계</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 07 · Lecture</span>
+              <div class="session-title">CME295 Lecture 2: Attention 심화와 BERT 계열</div>
+              <div class="chips">
+                <span class="chip purple">MHA/MQA/GQA</span>
+                <span class="chip yellow">RoPE</span>
+                <span class="chip">BERT</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>Attention approximation, MHA/MQA/GQA, positional embedding, RoPE, Transformer-based architecture, BERT 계열 개념을 비교 중심으로 정리합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>예상문제 방향</strong>
+              <p>Position embedding 역할, MHA/MQA/GQA 차이, RoPE 목적, BERT 계열 특징, Encoder/Decoder 구조 비교</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 08 · Lecture + Check</span>
+              <div class="session-title">딥러닝·CV·LLM 종합 정리 + 2차 범위 점검</div>
+              <div class="chips">
+                <span class="chip mint">Review</span>
+                <span class="chip purple">Non-Python</span>
+                <span class="chip red">20min Check</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>학습 내용</strong>
+              <p>CS231n과 CME295에서 헷갈리기 쉬운 loss, optimization, CNN 계산, attention 구조, Transformer 계열 비교를 다시 묶어 정리합니다. 마지막 20분은 딥러닝·CV·LLM 범위 점검에 사용합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>점검 방향</strong>
+              <p>CNN 출력 크기와 parameter 수 계산, loss·regularization 비교, MHA/MQA/GQA 차이, RoPE 목적, Encoder/Decoder 구조 비교</p>
+            </div>
+          </article>
+
+          <article class="session-card">
+            <div>
+              <span class="session-no">Session 09 · Final Mock</span>
+              <div class="session-title">최종 모의고사: 전체 범위 실전 점검</div>
+              <div class="chips">
+                <span class="chip red">Final Mock</span>
+                <span class="chip mint">Full Range</span>
+                <span class="chip yellow">Final</span>
+              </div>
+            </div>
+            <div class="session-part">
+              <strong>진행 방식</strong>
+              <p>Python, CS231n, CME295 범위를 모두 섞어 실제 시험처럼 시간 제한을 두고 풉니다. 문제는 개념형, 계산형, 코드해석형을 혼합합니다.</p>
+            </div>
+            <div class="session-part">
+              <strong>마무리</strong>
+              <p>개인별 오답노트를 정리하고, 최종 암기 카드와 자주 틀린 문제 목록을 남깁니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="mock">
+        <h2>점검 및 모의고사 운영 계획</h2>
+        <p>
+          점검은 총 3번 진행합니다. 1차와 2차는 별도 회차를 만들지 않고 강의 마지막 20분을 활용합니다.
+          마지막 최종 모의고사만 별도 회차로 운영해 전체 범위를 실전처럼 확인합니다.
+        </p>
+
+        <div class="grid-3">
+          <div class="problem-card">
+            <div class="label">Check 1</div>
+            <h3>Python 범위 점검</h3>
+            <p>Session 02 마지막 20분에 진행합니다. Python 공식 튜토리얼 기반으로 코드 해석, 자료구조, 함수, 예외, 모듈 문제를 짧게 풉니다.</p>
+            <ul>
+              <li>3~5문항</li>
+              <li>풀이 15분 + 즉시 채점/정리 5분</li>
+            </ul>
+          </div>
+
+          <div class="problem-card">
+            <div class="label">Check 2</div>
+            <h3>딥러닝·CV·LLM 범위 점검</h3>
+            <p>Session 08 마지막 20분에 진행합니다. CS231n과 CME295 범위에서 계산형·개념 비교형 문제를 중심으로 짧게 풉니다.</p>
+            <ul>
+              <li>3~5문항</li>
+              <li>풀이 15분 + 즉시 채점/정리 5분</li>
+            </ul>
+          </div>
+
+          <div class="problem-card">
+            <div class="label">Final Mock</div>
+            <h3>전체 범위 최종 모의고사</h3>
+            <p>Session 09에서 별도 회차로 운영합니다. Python, ML/DL, CNN, Transformer 개념을 섞어 실제 시험 대응력을 점검합니다.</p>
+            <ul>
+              <li>30문항</li>
+              <li>풀이 60분 + 해설 25분 + 최종 체크 5분</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="schedule">
+        <h2>8회 강의 + 1회 모의고사 운영 일정</h2>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">AI Expert Prep Course 8회 강의와 1회 최종 모의고사 운영 일정</caption>
+            <thead>
+              <tr>
+                <th scope="col">구간</th>
+                <th scope="col">회차</th>
+                <th scope="col">학습 구성</th>
+                <th scope="col">점검 방식</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="domain-cell">Python 기초</th>
+                <td>Session 01~02</td>
+                <td>Python 기본 문법, 자료구조, 함수, 모듈, 예외, 파일 I/O, class 기본</td>
+                <td>Session 02 마지막 20분에 Python 범위 점검</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">딥러닝·CV</th>
+                <td>Session 03~05</td>
+                <td>CS231n Module 1~2 기반 classification, loss, optimization, CNN, transfer learning</td>
+                <td>각 회차 예상문제 1~3개 풀이</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">Transformer·LLM</th>
+                <td>Session 06~07</td>
+                <td>CME295 Lecture 1~2 기반 tokenization, embedding, attention, Transformer, BERT 계열</td>
+                <td>각 회차 예상문제 1~3개 풀이</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">종합 정리</th>
+                <td>Session 08</td>
+                <td>CS231n + CME295 핵심 비교, CNN 계산, attention 구조, Transformer 계열 차이 정리</td>
+                <td>마지막 20분에 딥러닝·CV·LLM 범위 점검</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">최종 점검</th>
+                <td>Session 09</td>
+                <td>Python, CS231n, CME295 전체 범위 혼합</td>
+                <td>90분 최종 모의고사 및 해설</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box">
+          9회 고정안으로 운영하며, 2주 1회 기준 약 18주, 약 4.5개월 소요.
+        </div>
+      </section>
+
+      <section class="section" id="scope-summary">
+        <h2>학습 범위 요약</h2>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">AI Expert Prep Course 학습 범위 요약</caption>
+            <thead>
+              <tr>
+                <th scope="col">영역</th>
+                <th scope="col">핵심 학습 범위</th>
+                <th scope="col">시험 대비 포인트</th>
+                <th scope="col">권장 산출물</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="domain-cell">Python</th>
+                <td>기본문법, 자료구조, 제어문, 함수, 모듈, 예외, 파일 I/O, class 기본</td>
+                <td>짧은 코드 실행 결과와 자료구조 특징을 빠르게 판별</td>
+                <td>코드 해석 문제, 자주 틀린 문법 정리, 20분 범위 점검지</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">CS231n Module 1</th>
+                <td>Image classification, kNN, linear classifier, loss, optimization, backprop, neural network 학습</td>
+                <td>loss, regularization, gradient, overfitting 개념 비교</td>
+                <td>개념 비교표, loss·gradient 예상문제</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">CS231n Module 2</th>
+                <td>CNN layer, pooling, architecture, visualization, transfer learning</td>
+                <td>Conv 출력 크기 계산, parameter 수 계산, fine-tuning 전략 이해</td>
+                <td>CNN 계산 문제, architecture 요약 카드</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">CME295 Lecture 1</th>
+                <td>Tokenization, embedding, RNN/LSTM, attention, Transformer architecture</td>
+                <td>Transformer가 왜 등장했는지 흐름 중심으로 설명</td>
+                <td>Transformer 한 장 요약, attention 개념 문제</td>
+              </tr>
+              <tr>
+                <th scope="row" class="domain-cell">CME295 Lecture 2</th>
+                <td>MHA/MQA/GQA, positional embedding, RoPE, Transformer-based architecture, BERT</td>
+                <td>유사 개념 차이와 적용 목적 비교</td>
+                <td>MHA/MQA/GQA 비교표, RoPE 설명 문제, 20분 범위 점검지</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="resources">
+        <h2>학습 자료</h2>
+        <p>
+          아래 자료를 기본 소스로 사용합니다. 각 자료는 회차별 예상문제와 연결해 학습하고,
+          세션에서는 시험 대비 관점으로 핵심 개념과 오답 포인트를 정리합니다.
+        </p>
+
+        <div class="grid-2">
+          <a class="resource" href="https://docs.python.org/ko/3/tutorial/" target="_blank" rel="noopener noreferrer">
+            <div class="label">Official</div>
+            <strong>Python 공식 자습서</strong>
+            <p>Python 기본 문법, 자료구조, 모듈, 예외, 파일 처리, class 기본을 정리하는 주 자료입니다.</p>
+            <span>docs.python.org/ko/3/tutorial/</span>
+          </a>
+
+          <a class="resource" href="https://cs231n.github.io/" target="_blank" rel="noopener noreferrer">
+            <div class="label">Stanford</div>
+            <strong>CS231n Module 1~2</strong>
+            <p>Image classification, neural network, CNN, transfer learning 등 딥러닝·컴퓨터비전 기본 개념을 정리합니다.</p>
+            <span>cs231n.github.io</span>
+          </a>
+
+          <a class="resource" href="https://cme295.stanford.edu/syllabus/" target="_blank" rel="noopener noreferrer">
+            <div class="label">Stanford</div>
+            <strong>CME295 Syllabus</strong>
+            <p>Lecture 1, 2의 영상과 슬라이드를 기준으로 Transformer와 LLM 기본 개념을 학습합니다.</p>
+            <span>cme295.stanford.edu/syllabus/</span>
+          </a>
+
+          <a class="resource" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer">
+            <div class="label">Stanford</div>
+            <strong>CME295 Course Home</strong>
+            <p>Transformers & Large Language Models 과정의 전체 방향과 보조 자료 확인용으로 사용합니다.</p>
+            <span>cme295.stanford.edu</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="outputs">
+        <h2>운영 산출물</h2>
+        <p>
+          대비반이 끝났을 때 아래 산출물을 남기는 것을 목표로 합니다. 이후 시험 준비와 다음 기수 운영에도 재사용할 수 있게 정리합니다.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">산출물 1</div>
+            <h3>회차별 핵심 요약 카드</h3>
+            <p>각 세션마다 반드시 외울 개념, 헷갈리는 비교 포인트, 대표 문제를 1~2페이지로 정리합니다.</p>
+          </div>
+
+          <div class="card">
+            <div class="label">산출물 2</div>
+            <h3>범위 점검지 & 오답노트</h3>
+            <p>Python 범위 점검지, 딥러닝·CV·LLM 범위 점검지, 회차별 오답 사유를 누적합니다.</p>
+          </div>
+
+          <div class="card">
+            <div class="label">산출물 3</div>
+            <h3>최종 모의고사 세트</h3>
+            <p>전체 범위 최종 모의고사를 구성하고, 오답률 높은 개념을 시험 직전 복습 자료로 정리합니다.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Camera HAL Part AI Study · 2026 · Designed & Built by KH
+    </footer>
+  </div>
+</body>
+</html>
