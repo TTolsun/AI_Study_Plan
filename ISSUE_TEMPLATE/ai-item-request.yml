@@ -5,7 +5,7 @@ labels:
   - ai-item
   - enhancement
 assignees:
-  - YOUR_GITHUB_ID
+  - TTolsun
 
 body:
   - type: markdown
