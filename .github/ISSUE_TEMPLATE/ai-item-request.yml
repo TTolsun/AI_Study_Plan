@@ -1,1 +1,128 @@
-...
+name: AI Item 추가 요청
+description: Camera HAL AI Study에 추가하고 싶은 AI Item을 제안합니다.
+title: "[AI Item] "
+labels:
+  - ai-item
+  - enhancement
+assignees:
+  - TTolsun
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Camera HAL AI Study에 추가하고 싶은 AI Item을 작성해 주세요.
+        요청된 아이템은 검토 후 경환님이 수동으로 페이지에 반영합니다.
+
+  - type: input
+    id: item-title
+    attributes:
+      label: 아이템 이름
+      description: 추가하고 싶은 AI Item 이름을 적어 주세요.
+      placeholder: 예) Camera HAL 로그 패턴 자동 분류기
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 카테고리
+      description: 가장 가까운 카테고리를 선택해 주세요.
+      options:
+        - 리뷰/협업
+        - 디버깅/분석
+        - 업무 효율화
+        - 공통기반
+        - 형상/릴리즈
+        - 지식공유
+        - 품질/테스트
+        - 개발 생산성
+        - 문서화
+        - 온보딩
+        - 품질/정적분석
+        - 기타
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 왜 필요한가요?
+      description: 현재 어떤 불편함, 반복 업무, 누락 위험이 있는지 적어 주세요.
+      placeholder: 예) 로그가 너무 많아서 이슈 초도 분석 시 실패 시점을 찾는 데 시간이 오래 걸립니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 요약
+      description: 아이템을 한 문장으로 요약해 주세요.
+      placeholder: 예) Camera HAL 로그에서 반복되는 실패 패턴을 자동 분류하고 원인 후보를 추천합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: mvp
+    attributes:
+      label: 핵심 MVP
+      description: 스터디 기간 안에 데모 가능한 최소 기능을 적어 주세요.
+      placeholder: 예) 로그 파일을 입력받아 실패 시점, 관련 모듈, 원인 후보 Top 3를 Markdown으로 출력합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: input-output
+    attributes:
+      label: 입력 / 출력
+      description: 이 아이템의 입력 데이터와 결과물을 적어 주세요.
+      placeholder: |
+        입력: JIRA 이슈, 첨부 로그, 관련 코드 경로
+        출력: 실패 시점 요약, 원인 후보, 다음 확인 액션
+    validations:
+      required: true
+
+  - type: dropdown
+    id: expected-mm
+    attributes:
+      label: 예상 MM
+      description: 대략적인 작업 규모를 선택해 주세요.
+      options:
+        - 0.5~1.0 MM
+        - 1.0~1.5 MM
+        - 1.5~2.0 MM
+        - 2.0~2.5 MM
+        - 2.5~3.0 MM
+        - 3.0 MM 이상
+        - 잘 모르겠음
+    validations:
+      required: true
+
+  - type: dropdown
+    id: owner-intent
+    attributes:
+      label: 본인이 진행하고 싶은가요?
+      options:
+        - 직접 진행하고 싶음
+        - 아이디어만 제안
+        - 다른 사람과 같이 하고 싶음
+        - 아직 모르겠음
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-items
+    attributes:
+      label: 비슷한 기존 아이템
+      description: 현재 페이지에 있는 아이템 중 유사한 것이 있다면 적어 주세요.
+      placeholder: 예) 이슈 초도분석 도우미, 자율 디버깅 루프와 일부 유사합니다.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 요청 전 확인
+      options:
+        - label: 기존 아이템과 완전히 동일하지 않은지 확인했습니다.
+          required: true
+        - label: 스터디에서 데모 가능한 범위로 줄일 수 있다고 생각합니다.
+          required: true
