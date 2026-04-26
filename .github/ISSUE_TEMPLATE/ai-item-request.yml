@@ -113,9 +113,9 @@ body:
   - type: textarea
     id: related-items
     attributes:
-      label: 비슷한 기존 아이템
-      description: 현재 페이지에 있는 아이템 중 유사한 것이 있다면 적어 주세요.
-      placeholder: 예) 이슈 초도분석 도우미, 자율 디버깅 루프와 일부 유사합니다.
+      label: 디펜던시 아이템
+      description: 현재 페이지에 있는 아이템 중 디펜던시가 있는 것이 있다면 적어 주세요.
+      placeholder: 예) 이슈 초도분석 도우미가 완료되어야 합니다.
 
   - type: checkboxes
     id: checklist
@@ -123,6 +123,4 @@ body:
       label: 요청 전 확인
       options:
         - label: 기존 아이템과 완전히 동일하지 않은지 확인했습니다.
-          required: true
-        - label: 스터디에서 데모 가능한 범위로 줄일 수 있다고 생각합니다.
           required: true
