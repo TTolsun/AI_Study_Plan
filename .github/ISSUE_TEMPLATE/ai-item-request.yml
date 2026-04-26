@@ -63,10 +63,10 @@ body:
       required: true
 
   - type: textarea
-    id: mvp
+    id: mvp (Minimum Viable Product)
     attributes:
       label: 핵심 MVP
-      description: 스터디 기간 안에 데모 가능한 최소 기능을 적어 주세요.
+      description: 스터디 기간 안에 검증 가능한 최소 기능을 적어 주세요.
       placeholder: 예) 로그 파일을 입력받아 실패 시점, 관련 모듈, 원인 후보 Top 3를 Markdown으로 출력합니다.
     validations:
       required: true
