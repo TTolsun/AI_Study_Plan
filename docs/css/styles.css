@@ -1570,3 +1570,114 @@ tr:last-child td {
     transition: none;
   }
 }
+
+/* ==============================
+   Study Value label variants
+   Readability-first badge version
+   ============================== */
+
+.study-value-section .card > .label.label-need,
+.study-value-section .card > .label.label-goal,
+.study-value-section .card > .label.label-plus {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 34px !important;
+
+  padding: 0 14px 0 10px !important;
+  margin-bottom: 12px !important;
+
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #182338 !important;
+
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+
+  box-shadow: 0 6px 14px rgba(24, 35, 56, 0.08) !important;
+}
+
+/* small pokeball-inspired dot only */
+.study-value-section .card > .label.label-need::before,
+.study-value-section .card > .label.label-goal::before,
+.study-value-section .card > .label.label-plus::before {
+  content: "" !important;
+  width: 12px !important;
+  height: 12px !important;
+  flex: 0 0 12px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(24, 35, 56, 0.55) !important;
+  box-shadow: inset 0 -5px 0 #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* NEED */
+.study-value-section .card > .label.label-need {
+  border: 2px solid rgba(255, 87, 87, 0.22) !important;
+}
+
+.study-value-section .card > .label.label-need::before {
+  background: linear-gradient(
+    to bottom,
+    #ff7777 0 48%,
+    #222831 48% 56%,
+    #ffffff 56% 100%
+  ) !important;
+}
+
+/* GOAL */
+.study-value-section .card > .label.label-goal {
+  border: 2px solid rgba(47, 103, 255, 0.22) !important;
+}
+
+.study-value-section .card > .label.label-goal::before {
+  background: linear-gradient(
+    to bottom,
+    #5f8cff 0 48%,
+    #222831 48% 56%,
+    #ffffff 56% 100%
+  ) !important;
+}
+
+/* PLUS */
+.study-value-section .card > .label.label-plus {
+  border: 2px solid rgba(255, 216, 77, 0.34) !important;
+}
+
+.study-value-section .card > .label.label-plus::before {
+  background: linear-gradient(
+    to bottom,
+    #f7c948 0 48%,
+    #222831 48% 56%,
+    #ffffff 56% 100%
+  ) !important;
+}
+
+/* Study Value output tag */
+.study-value-section .chip.chip-output {
+  position: relative;
+  border-radius: 10px 14px 14px 10px;
+  background: rgba(47, 103, 255, 0.08);
+  color: var(--blue);
+  border: 2px solid rgba(47, 103, 255, 0.12);
+  box-shadow: 0 6px 12px rgba(47, 103, 255, 0.08);
+  letter-spacing: 0.06em;
+}
+
+.study-value-section .chip.chip-output::before {
+  content: "";
+  width: 6px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--blue), var(--sky));
+}
